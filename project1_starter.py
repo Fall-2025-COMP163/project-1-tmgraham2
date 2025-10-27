@@ -130,20 +130,4 @@ character['level'] += 1
     pass
 
 # Main program area (optional - for testing your functions)
-if __name__ == "__main__":
-    print("=== CHARACTER CREATOR ===")
-    print("Test your functions here!")
-    
-    char = create_character("Tashe", "Killer Queen")
-    display_character(char)
 
-    save_file = "my_character.txt"
-    if save_character(char, save_file):
-        print(f"\nSuccessfully saved {char['name']} to {save_file}")
-    
-    print(f"Loading character from {save_file}...")
-    loaded_char = load_character(save_file)
-
-    if loaded_char:
-        print(f"Load successfull!")
-        display_character(loaded_char)
