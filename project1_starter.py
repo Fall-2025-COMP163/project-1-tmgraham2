@@ -6,9 +6,9 @@ Date: [Date]
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
-def calculate_stats(character_stand, level):
+def calculate_stats(character_class, level):
     name = input("Enter your name:")
-    character_stand = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
+    character_class = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
     base_stamina = 200
     stm_growth = 30
     range = "close"
@@ -17,7 +17,7 @@ def calculate_stats(character_stand, level):
     base_strength = 150
     str_growth = 20
 
-    if character_stand == "Star Platinum":
+    if character_class == "Star Platinum":
         base_stamina = 200
         stm_growth = 50
         range = "close"
@@ -25,7 +25,7 @@ def calculate_stats(character_stand, level):
         spd_growth = 50
         base_strength = 350
         str_growth = 50
-    elif character_stand == "The World":
+    elif character_class == "The World":
         base_stamina = 175
         stm_growth = 35
         range = "long"
@@ -33,7 +33,7 @@ def calculate_stats(character_stand, level):
         spd_growth = 35
         base_strength = 325
         str_growth = 35
-    elif character_stand == "Stone Free":
+    elif character_class == "Stone Free":
         base_stamina = 150 
         stm_growth = 20
         range = "close"
@@ -41,7 +41,7 @@ def calculate_stats(character_stand, level):
         spd_growth = 40
         base_strength = 275
         str_growth = 30
-    elif character_stand == "Killer Queen":
+    elif character_class == "Killer Queen":
         base_stamina = 125
         stm_growth = 50
         range = "long"
@@ -60,12 +60,12 @@ def calculate_stats(character_stand, level):
     pass
     
 
-def create_character(name, character_stand):
+def create_character(name, character_class):
     level = 1
-    strength, stamina, speed = calculate_stats(character_stand, level)
+    strength, stamina, speed = calculate_stats(character_class, level)
     character = {
             "name": name,
-            "stand": character_stand,
+            "stand": character_class,
             "level": level,
             "strength": strength,
             "stamina": stamina,
