@@ -6,7 +6,7 @@ Date: [Date]
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
-def calculate_stats(character_class, level):
+def calculate_stats(character_stand, level):
     name = input("Enter your name:")
     character_stand = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
     base_stamina = 200
@@ -60,8 +60,8 @@ def calculate_stats(character_class, level):
     pass
     
 
-def create_character(name, character_class):
-        level = 1
+def create_character(name, character_stand):
+    level = 1
     strength, stamina, speed = calculate_stats(character_stand, level)
     character = {
             "name": name,
