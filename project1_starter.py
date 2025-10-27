@@ -6,23 +6,6 @@ Date: [Date]
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
-
-def create_character(name, character_class):
-        level = 1
-    strength, stamina, speed = calculate_stats(character_stand, level)
-    character = {
-            "name": name,
-            "stand": character_stand,
-            "level": level,
-            "strength": strength,
-            "stamina": stamina,
-            "range": range,
-            "speed": speed
-        }
-    
-    return character
-    pass
-
 def calculate_stats(character_class, level):
     name = input("Enter your name:")
     character_stand = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
@@ -76,6 +59,23 @@ def calculate_stats(character_class, level):
     return (strength, stamina, speed)
     pass
     
+
+def create_character(name, character_class):
+        level = 1
+    strength, stamina, speed = calculate_stats(character_stand, level)
+    character = {
+            "name": name,
+            "stand": character_stand,
+            "level": level,
+            "strength": strength,
+            "stamina": stamina,
+            "range": range,
+            "speed": speed
+        }
+    
+    return character
+    pass
+
 
 def save_character(character, filename):
     with open(filename, "w") as f:
