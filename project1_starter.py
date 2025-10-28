@@ -17,7 +17,26 @@ Example: AI helped with file I/O error handling logic in save_character function
     
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
+def create_character(name, character_stand):
+    level = 1
     
+    character = {
+            "name": name,
+            "stand": character_stand,
+            "level": level,
+            "strength": strength,
+            "stamina": stamina,
+            "range": range,
+            "speed": speed
+        }
+    
+    return character
+
+    
+  
+    # TODO: Implement this function
+    # Return a tuple: (strength, magic, health)
+    pass    
 
 def calculate_stats(character_stand, level):
     character_stand = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
@@ -70,26 +89,7 @@ def calculate_stats(character_stand, level):
 
     return (strength, stamina, speed)
 
-def create_character(name, character_stand):
-    level = 1
-    
-    character = {
-            "name": name,
-            "stand": character_stand,
-            "level": level,
-            "strength": strength,
-            "stamina": stamina,
-            "range": range,
-            "speed": speed
-        }
-    
-    return character
 
-    
-    
-    # TODO: Implement this function
-    # Return a tuple: (strength, magic, health)
-    pass
 
 def save_character(character, filename):
     with open(filename, "w") as f:
