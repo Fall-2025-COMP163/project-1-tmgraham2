@@ -102,36 +102,37 @@ def save_character(character, filename):
     Gold: [gold]
     """
     
-     with open(filename, 'w') as f:
-            f.write(f"Character Name: {character['name']}\n")
-            f.write(f"Class: {character['class']}\n")
-            f.write(f"Level: {character['level']}\n")
-            f.write(f"Strength: {character['strength']}\n")
-            f.write(f"Magic: {character['magic']}\n")
-            f.write(f"Health: {character['health']}\n")
-            f.write(f"Gold: {character['gold']}\n")
-        return True
+ with open(filename, 'w') as f:
+     f.write(f"Character Name: {character['name']}\n")
+     f.write(f"Class: {character['class']}\n")
+     f.write(f"Level: {character['level']}\n")
+     f.write(f"Strength: {character['strength']}\n")
+     f.write(f"Magic: {character['magic']}\n")
+     f.write(f"Health: {character['health']}\n")
+     f.write(f"Gold: {character['gold']}\n")
+return True
    
 
 def load_character(filename):
+    
     """
     Loads character from text file
     Returns: character dictionary if successful, None if file not found or error
     """
     
-     with open(filename, 'r') as f:
-          character = {}
-          lines = f.readlines()
+   with open(filename, 'r') as f:
+     character = {}
+     lines = f.readlines()
             
             # Simple line-by-line parsing
             # Assumes file is always in the correct format
-          character['name'] = lines[0].split(': ')[1].strip()
-          character['class'] = lines[1].split(': ')[1].strip()
-          character['level'] = int(lines[2].split(': ')[1].strip())
-          character['strength'] = int(lines[3].split(': ')[1].strip())
-          character['magic'] = int(lines[4].split(': ')[1].strip())
-          character['health'] = int(lines[5].split(': ')[1].strip())
-          character['gold'] = int(lines[6].split(': ')[1].strip())
+     character['name'] = lines[0].split(': ')[1].strip()
+     character['class'] = lines[1].split(': ')[1].strip()
+     character['level'] = int(lines[2].split(': ')[1].strip())
+     character['strength'] = int(lines[3].split(': ')[1].strip())
+     character['magic'] = int(lines[4].split(': ')[1].strip())
+     character['health'] = int(lines[5].split(': ')[1].strip())
+     character['gold'] = int(lines[6].split(': ')[1].strip())
             
      return character
             
