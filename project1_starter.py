@@ -91,7 +91,7 @@ def save_character(character, filename):
     
 
     
-    with open(project1_starter.py, 'w') as f:
+    with open('project1_starter.py', 'w') as f:
          f.write(f"Character Name: {character['name']}\n")
          f.write(f"Class: {character['class']}\n")
          f.write(f"Level: {character['level']}\n")
@@ -107,7 +107,7 @@ def load_character(filename):
     
     
     
-    with open(project1_starter.py, 'r') as f:
+    with open('project1_starter.py', 'r') as f:
         
          
         character = {}
