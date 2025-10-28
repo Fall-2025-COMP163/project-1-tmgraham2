@@ -88,28 +88,18 @@ def create_character(name, character_class):
 
 
 def save_character(character, filename):
-    """
-    Saves character to text file in specific format
-    Returns: True if successful, False if error occurred
     
-    Required file format:
-    Character Name: [name]
-    Class: [class]
-    Level: [level]
-    Strength: [strength]
-    Magic: [magic]
-    Health: [health]
-    Gold: [gold]
-    """
+
     
- with open(filename, 'w') as f:
-     f.write(f"Character Name: {character['name']}\n")
-     f.write(f"Class: {character['class']}\n")
-     f.write(f"Level: {character['level']}\n")
-     f.write(f"Strength: {character['strength']}\n")
-     f.write(f"Magic: {character['magic']}\n")
-     f.write(f"Health: {character['health']}\n")
-     f.write(f"Gold: {character['gold']}\n")
+    with open(filename, 'w') as f:
+         f.write(f"Character Name: {character['name']}\n")
+         f.write(f"Class: {character['class']}\n")
+         f.write(f"Level: {character['level']}\n")
+         f.write(f"Strength: {character['strength']}\n")
+         f.write(f"Magic: {character['magic']}\n")
+         f.write(f"Health: {character['health']}\n")
+         f.write(f"Gold: {character['gold']}\n")
+
 return True
    
 
