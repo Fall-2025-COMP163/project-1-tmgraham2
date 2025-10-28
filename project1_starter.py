@@ -100,13 +100,15 @@ def save_character(character, filename):
          f.write(f"Health: {character['health']}\n")
          f.write(f"Gold: {character['gold']}\n")
 
-return True
+    return True
    
 
 def load_character(filename):
     
     
+    
     with open(filename, 'r') as f:
+        
          
         character = {}
         lines = f.readlines()
@@ -121,7 +123,7 @@ def load_character(filename):
         character['health'] = int(lines[5].split(': ')[1].strip())
         character['gold'] = int(lines[6].split(': ')[1].strip())
             
-return character
+    return character
             
     
 
