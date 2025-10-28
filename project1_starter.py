@@ -88,7 +88,7 @@ def create_character(name, character_class):
 
 
 def save_character(character, filename):
-    
+    filename = 'project1_starter.py'
 
     
     with open('project1_starter.py', 'w') as f:
