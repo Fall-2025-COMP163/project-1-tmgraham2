@@ -87,7 +87,7 @@ def create_character(name, character_class):
 
 
 
-def save_character(character, project1_starter.py):
+def save_character(character, filename):
     
 
     
@@ -103,7 +103,7 @@ def save_character(character, project1_starter.py):
     return True
    
 
-def load_character(porject1_starter.py):
+def load_character(filename):
     
     
     
