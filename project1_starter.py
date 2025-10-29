@@ -20,8 +20,6 @@ Example: AI helped with file I/O error handling logic in save_character function
 import os   
 
 def calculate_stats(character_stand, level):
-    name = input("Enter your name:")
-    character_stand = input("Select a stand from list:\nStar Platinum, The World, Stone Free, Killer Queen ")
     base_stamina = 200
     stm_growth = 30
     range = "close"
