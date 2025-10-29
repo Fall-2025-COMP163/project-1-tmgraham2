@@ -188,20 +188,7 @@ if __name__ == "__main__":
     if save_character(char, save_file):
         print(f"\nSuccessfully saved {char['name']} to {save_file}")
     
-    # 4. Load the character
-    print(f"Loading character from {save_file}...")
-    loaded_char = load_character(save_file)
-    
-    if loaded_char:
-        print("Load successful!")
-        display_character(loaded_char)
-        
-
-    
-    # 5. Test file not found error
-    print("\nTesting load error for missing file:")
-    load_character("non_existent_file.txt")
-
+   
 
 
 
