@@ -89,6 +89,8 @@ def create_character(name, character_class):
 
 def save_character(character, filename):
     filename = 'project1_starter.py'
+    if save_character(character, filename):
+        print(f"\Successfully saved {character['name'] to {filename}")
 
     
     with open('project1_starter.py', 'w') as f:
@@ -104,7 +106,7 @@ def save_character(character, filename):
    
 
 def load_character(filename):
-    
+    print(f"Loading character from {filename}...")
     
     
     with open('project1_starter.py', 'r') as f:
