@@ -3,6 +3,7 @@ COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: [Tashe Graham]
 Date: [10/20/2025]
 """
+import os 
 def calculate_stats(character_class, level):
     """
     Calculates base stats based on class and level.
