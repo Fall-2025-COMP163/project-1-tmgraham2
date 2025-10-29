@@ -89,7 +89,7 @@ def create_character(name, character_class):
 
 def save_character(character, filename):
     filename = 'project1_starter.py'
-    if save_character(character, filename):
+    if save_character(character, 'project1_starter.py'):
         print(f"\Successfully saved {character['name']} to {filename}")
 
     
