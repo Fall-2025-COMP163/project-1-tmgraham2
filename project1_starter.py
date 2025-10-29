@@ -71,7 +71,9 @@ def calculate_stats(character_stand, level):
 
 def create_character(name, character_stand):
     level = 1
-    strength, stamina, speed = calculate_stats(character_stand, level)
+    strength = calculate_stats(character_stand, level)
+    stamina = calculate_stats(character_stand, level)
+    speed = calculate_stats(character_stand, level)
     character = {
             "name": name,
             "stand": character_stand,
