@@ -146,11 +146,11 @@ def save_character(character, filename):
         f.write(f"Health: {character['health']}\n")
         f.write(f"Gold: {character['gold']}\n")
     return True
-
+import os 
 def load_character(filename):
     
 
-import os   
+   
     # Use if/else to check for file existence
     if not os.path.exists('project1_starter.py'):
         print(f"Error: Character file not found at {filename}")
