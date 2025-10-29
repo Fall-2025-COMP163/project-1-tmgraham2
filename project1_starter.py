@@ -88,8 +88,8 @@ def create_character(name, character_class):
 
 
 def save_character(character, filename):
-    filename = 'project1_starter.py'
-    if save_character(character, 'project1_starter.py'):
+    
+    if save_character(character, filename):
         print(f"\Successfully saved {character['name']} to {filename}")
 
     
@@ -107,25 +107,27 @@ def save_character(character, filename):
 
 def load_character(filename):
     print(f"Loading character from {filename}...")
+    if not os.path.exists(filename):
+        print(f"Error: Character file not found at {filename}")
+        return None
     
-    
-    with open('project1_starter.py', 'r') as f:
-        
+        with open(filename, 'r') as f:
+            
          
-        character = {}
-        lines = f.readlines()
+            character = {}
+            lines = f.readlines()
             
             # Simple line-by-line parsing
             # Assumes file is always in the correct format
-        character['name'] = lines[0].split(': ')[1].strip()
-        character['class'] = lines[1].split(': ')[1].strip()
-        character['level'] = int(lines[2].split(': ')[1].strip())
-        character['strength'] = int(lines[3].split(': ')[1].strip())
-        character['magic'] = int(lines[4].split(': ')[1].strip())
-        character['health'] = int(lines[5].split(': ')[1].strip())
-        character['gold'] = int(lines[6].split(': ')[1].strip())
+            character['name'] = lines[0].split(': ')[1].strip()
+            character['class'] = lines[1].split(': ')[1].strip()
+            character['level'] = int(lines[2].split(': ')[1].strip())
+            character['strength'] = int(lines[3].split(': ')[1].strip())
+            character['magic'] = int(lines[4].split(': ')[1].strip())
+            character['health'] = int(lines[5].split(': ')[1].strip())
+            character['gold'] = int(lines[6].split(': ')[1].strip())
             
-    return character
+            return character
             
     
 
