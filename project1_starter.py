@@ -85,7 +85,7 @@ def create_character(name, character_class):
 
 
 def save_character(character, filename):
-    filename = 'project1_starter.py'
+    
 
     with open(filename, 'w') as f:
         f.write(f"Character Name: {character['name']}\n")
