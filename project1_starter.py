@@ -87,7 +87,7 @@ def create_character(name, character_class):
 def save_character(character, filename):
     
 
-    with open(filename, 'w') as f:
+    with open('project1_starter.py', 'w') as f:
         f.write(f"Character Name: {character['name']}\n")
         f.write(f"Class: {character['class']}\n")
         f.write(f"Level: {character['level']}\n")
@@ -103,7 +103,7 @@ def load_character(filename):
     Returns: character dictionary if successful, None if file not found or error
     """
     # Use if/else to check for file existence
-    if not os.path.exists(filename):
+    if not os.path.exists('project1_starter.py'):
         print(f"Error: Character file not found at {filename}")
         return None
         
@@ -112,7 +112,7 @@ def load_character(filename):
     
     # Removed try/except block as requested.
     # The program will crash if the file is empty or malformed.
-    with open(filename, 'r') as f:
+    with open('project1_starter.py', 'r') as f:
         character = {}
         lines = f.readlines()
         
