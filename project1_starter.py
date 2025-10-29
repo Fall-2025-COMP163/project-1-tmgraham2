@@ -3,7 +3,8 @@ COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: [Tashe Graham]
 Date: [10/20/2025]
 """
-import os 
+import os # Import the os module for file system checks
+
 def calculate_stats(character_class, level):
     """
     Calculates base stats based on class and level.
@@ -86,36 +87,87 @@ def create_character(name, character_class):
     
     return character
 
+# --- Example Usage ---
 
+# Create a Mage as per the example
+char_aria = create_character("Aria", "Mage")
+print(f"Mage created: {char_aria}")
+# Expected: {'name': 'Aria', 'class': 'Mage', 'level': 1, 'strength': 3, 'magic': 15, 'health': 80, 'gold': 100}
 
-def save_character(character, filename)
+# Create a Warrior
+char_grog = create_character("Grog", "Warrior")
+print(f"Warrior created: {char_grog}")
+# Expected: {'name': 'Grog', 'class': 'Warrior', 'level': 1, 'strength': 10, 'magic': 2, 'health': 100, 'gold': 100}
 
-    with open('project1_starter.py', 'w') as f:
-         f.write(f"Character Name: {character['name']}\n")
-         f.write(f"Class: {character['class']}\n")
-         f.write(f"Level: {character['level']}\n")
-         f.write(f"Strength: {character['strength']}\n")
-         f.write(f"Magic: {character['magic']}\n")
-         f.write(f"Health: {character['health']}\n")
-         f.write(f"Gold: {character['gold']}\n")
+# Create a Rogue
+char_vex = create_character("Vex", "Rogue")
+print(f"Rogue created: {char_vex}")
+# Expected: {'name': 'Vex', 'class': 'Rogue', 'level': 1, 'strength': 7, 'magic': 7, 'health': 70, 'gold': 100}
 
+# Create a Cleric
+char_pikel = create_character("Pikel", "Cleric")
+print(f"Cleric created: {char_pikel}")
+# Expected: {'name': 'Pikel', 'class': 'Cleric', 'level': 1, 'strength': 5, 'magic': 10, 'health': 90, 'gold': 100}
+
+# --- Example of a higher level character ---
+# Note: create_character currently defaults to level 1, 
+# but we can test calculate_stats directly for a level 5 Warrior
+
+lvl_5_warrior_stats = calculate_stats("Warrior", 5)
+print(f"\nStats for a Level 5 Warrior: {lvl_5_warrior_stats}")
+# Expected: Strength = 10 + (4*3) = 22
+#           Magic    = 2  + (4*1) = 6
+#           Health   = 100 + (4*10) = 140
+# Output: Stats for a Level 5 Warrior: (22, 6, 140)
+
+def save_character(character, filename):
+    """
+    Saves character to text file in specific format
+    Returns: True if successful, False if error occurred
+    
+    Required file format:
+    Character Name: [name]
+    Class: [class]
+    # Health: [health]
+    # Gold: [gold]
+    """
+    # NOTE: Using try/except here is still the best practice.
+    # We can't easily predict write errors (like disk full or permissions)
+    # with an if-statement, so catching the IOError is the correct way.
+    
+    # Removed try/except block as requested.
+    # The program will crash if an IOError occurs (e.g., no write permission).
+    with open(filename, 'w') as f:
+        f.write(f"Character Name: {character['name']}\n")
+        f.write(f"Class: {character['class']}\n")
+        f.write(f"Level: {character['level']}\n")
+        f.write(f"Strength: {character['strength']}\n")
+        f.write(f"Magic: {character['magic']}\n")
+        f.write(f"Health: {character['health']}\n")
+        f.write(f"Gold: {character['gold']}\n")
     return True
-   
 
 def load_character(filename):
-    print(f"Loading character from {filename}...")
+    """
+    Loads character from text file
+    Returns: character dictionary if successful, None if file not found or error
+    """
+    # Use if/else to check for file existence
     if not os.path.exists(filename):
         print(f"Error: Character file not found at {filename}")
         return None
+        
+    # If the file exists, we still need try/except for read/parsing errors
+    # This handles cases where the file is empty or malformed
     
+    # Removed try/except block as requested.
+    # The program will crash if the file is empty or malformed.
     with open(filename, 'r') as f:
-            
-         
         character = {}
         lines = f.readlines()
-            
-            # Simple line-by-line parsing
-            # Assumes file is always in the correct format
+        
+        # Simple line-by-line parsing
+        # Assumes file is always in the correct format
         character['name'] = lines[0].split(': ')[1].strip()
         character['class'] = lines[1].split(': ')[1].strip()
         character['level'] = int(lines[2].split(': ')[1].strip())
@@ -123,10 +175,8 @@ def load_character(filename):
         character['magic'] = int(lines[4].split(': ')[1].strip())
         character['health'] = int(lines[5].split(': ')[1].strip())
         character['gold'] = int(lines[6].split(': ')[1].strip())
-            
+        
         return character
-            
-    
 
 def display_character(character):
     """
@@ -203,4 +253,6 @@ if __name__ == "__main__":
     # 5. Test file not found error
     print("\nTesting load error for missing file:")
     load_character("non_existent_file.txt")
+
+
 
