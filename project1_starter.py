@@ -3,7 +3,7 @@ COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: [Tashe Graham]
 Date: [10/20/2025]
 """
-import os # Import the os module for file system checks
+ # Import the os module for file system checks
 
 def calculate_stats(character_class, level):
     """
@@ -148,20 +148,20 @@ def save_character(character, filename):
     return True
 
 def load_character(filename):
-    """
-    Loads character from text file
-    Returns: character dictionary if successful, None if file not found or error
-    """
+    
+
+import os   
     # Use if/else to check for file existence
     if not os.path.exists('project1_starter.py'):
         print(f"Error: Character file not found at {filename}")
         return None
-        
+      """  
     # If the file exists, we still need try/except for read/parsing errors
     # This handles cases where the file is empty or malformed
     
     # Removed try/except block as requested.
     # The program will crash if the file is empty or malformed.
+    """
     with open('project1_starter.py', 'r') as f:
         character = {}
         lines = f.readlines()
@@ -234,7 +234,7 @@ if __name__ == "__main__":
     display_character(char)
 
     # 3. Save the character
-    save_file = "my_character.txt"
+    save_file = 'project1_starter.py'
     if save_character(char, save_file):
         print(f"\nSuccessfully saved {char['name']} to {save_file}")
     
