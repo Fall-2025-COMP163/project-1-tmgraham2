@@ -85,7 +85,10 @@ def create_character(name, character_class):
 
 
 def save_character(character, filename):
-    
+    import os
+    directory = os.path.dirname(filename)
+    if directory and not os.path.exists(directory):
+        return False
 
     with open(filename, 'w') as f:
         f.write(f"Character Name: {character['name']}\n")
