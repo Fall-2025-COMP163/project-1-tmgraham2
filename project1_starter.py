@@ -83,7 +83,7 @@ def create_character(name, character_class):
     
     return character
 
-# AI used to properly save the file with correct format
+# AI(Google Gemini) used to properly save the file with correct format
 def save_character(character, filename):
      import os
      directory = os.path.dirname(filename)
@@ -117,7 +117,7 @@ def load_character(filename):
         character = {}
         lines = f.readlines()
         
-        # AI use
+        # AI(Google Gemini) used to ensure correct format
         # Assumes file is always in the correct format and strips whitespace
         character['name'] = lines[0].split(': ')[1].strip()
         character['class'] = lines[1].split(': ')[1].strip()
