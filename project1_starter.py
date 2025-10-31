@@ -96,7 +96,7 @@ def save_character(character, filename):
         f.write(f"Health: {character['health']}\n")
         f.write(f"Gold: {character['gold']}\n")
     return True
-
+import os
 def load_character(filename):
     """
     Loads character from text file
