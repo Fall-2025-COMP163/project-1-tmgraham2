@@ -1,9 +1,10 @@
 """
 COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: [Tashe Graham]
-Date: [10/20/2025]
+Date: [10/31/2025]
+
 """
-import os # Import the os module for file system checks
+import os # Import the os module 
 
 def calculate_stats(character_class, level):
     
@@ -48,8 +49,7 @@ def calculate_stats(character_class, level):
         health_growth = 8
     
     # Calculate final stats based on level
-    # Formula: base_stat + ((level - 1) * growth_rate)
-    # We use (level - 1) so at level 1, stats are just the base stats.
+   
     strength = base_strength + ((level - 1) * str_growth)
     magic = base_magic + ((level - 1) * mag_growth)
     health = base_health + ((level - 1) * health_growth)
@@ -57,13 +57,13 @@ def calculate_stats(character_class, level):
     return (strength, magic, health)
 
 def create_character(name, character_class):
-    """
-    Creates a new character dictionary with calculated stats.
     
-    Returns:
-        dict: Keys: name, class, level, strength, magic, health, gold
-    """
+    #Creates a new character dictionary with calculated stats.
     
+    #Returns:
+        #dict: Keys: name, class, level, strength, magic, health, gold
+    
+    # Base stats
     level = 1
     gold = 100
     
@@ -83,14 +83,14 @@ def create_character(name, character_class):
     
     return character
 
-
+# AI used to properly save the file with correct format
 def save_character(character, filename):
-    import os
-    directory = os.path.dirname(filename)
-    if directory and not os.path.exists(directory):
-        return False
-
-    with open(filename, 'w') as f:
+     import os
+     directory = os.path.dirname(filename)
+     if directory and not os.path.exists(directory):
+         return False
+    # Writing into the file
+     with open(filename, 'w') as f:
         f.write(f"Character Name: {character['name']}\n")
         f.write(f"Class: {character['class']}\n")
         f.write(f"Level: {character['level']}\n")
@@ -98,29 +98,27 @@ def save_character(character, filename):
         f.write(f"Magic: {character['magic']}\n")
         f.write(f"Health: {character['health']}\n")
         f.write(f"Gold: {character['gold']}\n")
-    return True
+        return True
 import os
+
 def load_character(filename):
-    """
-    Loads character from text file
-    Returns: character dictionary if successful, None if file not found or error
-    """
+    
+    # Loads character from text file
+    # Returns: character dictionary if successful, None if file not found or error
+    
     # Use if/else to check for file existence
     if not os.path.exists(filename):
         print(f"Error: Character file not found at {filename}")
-        return None
-        
-    # If the file exists, we still need try/except for read/parsing errors
-    # This handles cases where the file is empty or malformed
+        return None    
     
-    # Removed try/except block as requested.
+    
     # The program will crash if the file is empty or malformed.
     with open(filename, 'r') as f:
         character = {}
         lines = f.readlines()
         
-        # Simple line-by-line parsing
-        # Assumes file is always in the correct format
+        # AI use
+        # Assumes file is always in the correct format and strips whitespace
         character['name'] = lines[0].split(': ')[1].strip()
         character['class'] = lines[1].split(': ')[1].strip()
         character['level'] = int(lines[2].split(': ')[1].strip())
@@ -132,20 +130,12 @@ def load_character(filename):
         return character
 
 def display_character(character):
-    """
-    Prints formatted character sheet
-    Returns: None (prints to console)
     
-    Example output:
-    === CHARACTER SHEET ===
-    Name: Aria
-    Class: Mage
-    Level: 1
-    Strength: 5
-    Magic: 15
-    Health: 80
-    Gold: 100
-    """
+    #Prints formatted character sheet
+    #Returns: None (prints to console)
+    
+    
+    
     print("\n=== CHARACTER SHEET ===")
     print(f"Name: {character['name']}")
     print(f"Class: {character['class']}")
@@ -156,12 +146,12 @@ def display_character(character):
     print(f"Gold: {character['gold']}")
     print("=======================")
 
-def level_up(character):
-    """
-    Increases character level and recalculates stats
-    Modifies the character dictionary directly
-    Returns: None
-    """
+def level_up(character): 
+    
+    # Increases character level and recalculates stats
+    # Modifies the character dictionary directly
+    # Returns: None
+    
     # Increase level
     character['level'] += 1
     print(f"\n{character['name']} leveled up to Level {character['level']}!")
